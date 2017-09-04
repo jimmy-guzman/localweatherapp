@@ -1,5 +1,5 @@
 body {
-background-color: #22223b;
+background-color: black;
   margin: 20px auto;
   width: 100%;
   text-align: center;
@@ -61,13 +61,15 @@ background-color: #22223b;
 }
 
 #icon {
-  margin-bottom: -40px;
+    padding-left: px;
+  /*margin-bottom:-40px;
  /* margin-top: 10px; */
+ /*   margin-right: -100px;*/
  /* width: 350px; */
 }
 
 .info-box {
-    background-color: #4a4e69;
+    background-color: black;
 } 
 /*
 @media only screen and (max-width: 600px) {
