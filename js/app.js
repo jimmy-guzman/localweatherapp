@@ -66,11 +66,11 @@ function getWeatherAPI(apiDarkSky) {
         });
 };
 
-// DarkSky icons 
+// DarkSky icons
 function weatherIcon(weatherType) {
     console.log(weatherType);
     var skycon = new Skycons({
-        "color": "orange"
+        "color": "white"
     });
 
     switch (weatherType) {
