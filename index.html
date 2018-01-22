@@ -8,7 +8,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css'>
-<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -18,22 +17,24 @@
 <body>
 
     <div class="container text-center">
+
         <div class=" row h-100">
-          <div class="info-box col-lg-6 col-xs-12 my-auto">
-            <h1 id="location"></h1>
-            <div class="row h-100">
-                <div class="col-12 text-center my-auto">
-                    <span id="temp"></span>
-                    <span class="symbol">&deg;</span><br>
-                </div>
-                <div class="col-12 text-center my-auto icon-box">
-                    <canvas id="icon"></canvas><br>
-                </div>
-                <div class="col-12 text-center my-auto">
-                    <span id="conditions"></span><br>
+            <div class="info-box col-lg-6 col-xs-12 my-auto">
+                <h1 id="location"></h1>
+                <div class="row h-100">
+                    <div class="col-12 text-center my-auto">
+                        <span id="temp"></span>
+                        <span class="symbol">&deg;</span>
+                        <button class="button selected" id="toggleTempButton" >&deg;F</button>
+                    </div>
+                    <div class="col-12 text-center my-auto">
+                        <canvas id="icon"></canvas>
+                    </div>
+                    <div class="col-12 text-center my-auto">
+                        <span id="conditions"></span>
+                    </div>
                 </div>
             </div>
-          </div>
 
         </div>
     </div>

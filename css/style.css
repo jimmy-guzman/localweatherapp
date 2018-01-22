@@ -1,72 +1,66 @@
-html, body, .container {
-    height: 100%;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+html,
+body,
+.container {
+  height: 100%;
 }
-
 
 body {
-background: #333333;
-color: #0083B2;
   width: 100%;
   text-align: center;
-  font-family: 'Monoton', cursive;
+  font-family: "Open Sans", sans-serif;
 }
 
-
 #location {
-  color: #FF530D;
   font-size: 60px;
   margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .symbol {
   font-size: 100px;
-  color: #BF7524;
 }
 
 #temp {
+  text-align: right;
+  display: inline-block;
   font-size: 100px;
-  color: #BF7524;
+  width: 100px;
 }
 
 #conditions {
-  font-size:60px;
-  color: #B83422;
+  font-size: 60px;
 }
 
 .conditions {
-    padding-top: 40px;
+  padding-top: 40px;
 }
-
 
 .info-box {
-    background-color: #333;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.icon-box {
-  padding-top: 1em;
+  color: #efefef;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
+  padding: 1.3em;
+  font-weight: bold;
 }
 
 /*---------------Button----------------*/
 .button {
-  background: #BAA378;
-  color: #382E1C;
+  font-family: "Open Sans", sans-serif;
+  background: transparent;
   border: none;
-  border-radius: 5px;
   color: white;
   font-size: 18px;
-  margin-top: 40px;
   cursor: pointer;
-  width: 140px;
-  height: 40px;
+  outline: none;
+  box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
 }
 
 .button:hover {
-  color: #000;
+  transform: scale(.9);
 }
 
 .button:focus {
-  outline: 1px solid #666;
-
+  outline: none;
 }
