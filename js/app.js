@@ -1,5 +1,3 @@
-getUserInfo();
-
 var x = document.getElementById("location");
 var temp = document.getElementById("temp");
 var cond = document.getElementById("conditions");
@@ -7,16 +5,15 @@ var icon = document.getElementById("icon");
 
 function getUserInfo() {
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition, showError);
+    navigator.geolocation.getCurrentPosition(showLocation, showError);
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
 }
 
 // DarkSky API
-function showPosition(position) {
+function showLocation(position) {
   var latlon = position.coords.latitude + "," + position.coords.longitude;
-  console.log(latlon);
   var apiGoogleLocation =
     "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
     latlon +
@@ -34,7 +31,6 @@ function getLocationAPI(apiGoogleLocation) {
     method: "GET"
   }).then(function(response) {
     response.json().then(function(data) {
-      console.log(data);
       var userCity = data.results[0].address_components[2].long_name;
       var userState = data.results[0].address_components[5].long_name;
       x.innerHTML = userCity + ", " + userState;
@@ -50,32 +46,15 @@ function getWeatherAPI(apiDarkSky) {
       return response.json();
     })
     .then(function(data) {
-      console.log(data);
       temp.innerHTML = Math.round(data.currently.temperature);
       cond.innerHTML = data.currently.summary;
       weatherIcon(data.currently.icon);
     });
 }
 
-function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
-
-const body = document.querySelector("body");
-body.style.background = getRandomColor();
-
-const infoBox = document.querySelector(".info-box");
-infoBox.style.background = getRandomColor();
-
-// DarkSky icons
 function weatherIcon(weatherType) {
   var skycon = new Skycons({
-    color: "white"
+    color: "#efefef"
   });
 
   switch (weatherType) {
@@ -113,21 +92,18 @@ function weatherIcon(weatherType) {
   skycon.play();
 }
 
-// Button from Fahrenheit to Celcius
 const toggleTempButton = document.getElementById("toggleTempButton");
 
 toggleTempButton.addEventListener("click", function() {
   if (this.innerHTML === "°F") {
     this.innerHTML = "°C";
-    temp.innerHTML= Math.round((temp.innerHTML - 32) / 1.8);  
+    temp.innerHTML = Math.round((temp.innerHTML - 32) / 1.8);
   } else {
     this.innerHTML = "°F";
-    temp.innerHTML= Math.round( temp.innerHTML* 1.8 + 32);
+    temp.innerHTML = Math.round(temp.innerHTML * 1.8 + 32);
   }
 });
 
-
-// Error message when location is unavailable
 function showError(error) {
   switch (error.code) {
     case error.PERMISSION_DENIED:
@@ -144,3 +120,21 @@ function showError(error) {
       break;
   }
 }
+
+function getRandomColor() {
+  var letters = "0123456789ABCDEF";
+  var color = "#";
+  for (var i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+const randomColor = getRandomColor();
+
+const body = document.querySelector("body");
+body.style.background = randomColor;
+
+toggleTempButton.style.background = randomColor;
+
+getUserInfo();
