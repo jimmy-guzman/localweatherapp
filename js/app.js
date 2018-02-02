@@ -54,7 +54,7 @@ function getWeatherAPI(apiDarkSky) {
 
 function weatherIcon(weatherType) {
   var skycon = new Skycons({
-    color: "#efefef"
+    color: "#324D5C"
   });
 
   switch (weatherType) {
@@ -135,6 +135,6 @@ const randomColor = getRandomColor();
 const body = document.querySelector("body");
 body.style.background = randomColor;
 
-toggleTempButton.style.background = randomColor;
+// toggleTempButton.style.background = randomColor;
 
 getUserInfo();

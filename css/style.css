@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 html,
 body,
 .container {
@@ -22,11 +22,11 @@ body {
 }
 
 #temp {
-  text-align: right;
+  text-align: center;
   display: inline-block;
   font-size: 100px;
-  width: 100px;
-  margin-right: 5px;
+  /* width: 100px; */
+  /* margin-right: 5px; */
 }
 
 #conditions {
@@ -38,25 +38,30 @@ body {
 }
 
 .info-box {
-  background: #324D5C;
-  color: #efefef;
+  color: #324D5C;
+  background: #efefef;
   margin-left: auto;
   margin-right: auto;
   box-shadow: 0 2px 5px 1px rgba(0, 0, 0, 0.2);
   padding: 2.6em 0;
-  font-weight: bold;
-  border-radius: .3em;
+  font-weight: 700;
+  position: relative;
 }
 
 /*---------------Button----------------*/
 .button {
+  position: absolute;
   font-family: "Open Sans", sans-serif;
   border: none;
-  color: #efefef;
+  color: #324D5C;
   font-size: 18px;
+  font-weight: 700;
   cursor: pointer;
   outline: none;
   border-radius: .3em;
+  top: 5px;
+  right: 5px;
+  background: transparent;
 }
 
 .button:hover {
@@ -65,4 +70,10 @@ body {
 
 .button:focus {
   outline: none;
+}
+
+@media (min-width: 576px) {
+  .info-box {
+    border-radius: .3em;
+  }
 }
