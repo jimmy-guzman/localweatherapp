@@ -1,7 +1,7 @@
-var x = document.getElementById("location");
-var temp = document.getElementById("temp");
-var cond = document.getElementById("conditions");
-var icon = document.getElementById("icon");
+const x = document.getElementById("location");
+const temp = document.getElementById("temp");
+const cond = document.getElementById("conditions");
+const icon = document.getElementById("icon");
 
 function getUserInfo() {
   if (navigator.geolocation) {
@@ -11,14 +11,13 @@ function getUserInfo() {
   }
 }
 
-// DarkSky API
 function showLocation(position) {
-  var latlon = position.coords.latitude + "," + position.coords.longitude;
-  var apiGoogleLocation =
+  const latlon = position.coords.latitude + "," + position.coords.longitude;
+  const apiGoogleLocation =
     "https://maps.googleapis.com/maps/api/geocode/json?latlng=" +
     latlon +
-    "&key=AIzaSyBY7wNvXSJYhDCJ686HknWOBTt9hLOqogo";
-  var apiDarkSky =
+    "&key=AIzaSyCRi6Tt0-K9j0cORmFAznRJvUcBkPU4EwY";
+  const apiDarkSky =
     "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/d4db648610e69526608372c8eef56406/" +
     latlon;
 
@@ -31,8 +30,8 @@ function getLocationAPI(apiGoogleLocation) {
     method: "GET"
   }).then(function(response) {
     response.json().then(function(data) {
-      var userCity = data.results[0].address_components[2].long_name;
-      var userState = data.results[0].address_components[5].long_name;
+      const userCity = data.results[0].address_components[2].long_name;
+      const userState = data.results[0].address_components[5].long_name;
       x.innerHTML = userCity + ", " + userState;
     });
   });
@@ -53,7 +52,7 @@ function getWeatherAPI(apiDarkSky) {
 }
 
 function weatherIcon(weatherType) {
-  var skycon = new Skycons({
+  const skycon = new Skycons({
     color: "#324D5C"
   });
 
@@ -122,9 +121,9 @@ function showError(error) {
 }
 
 function getRandomColor() {
-  var letters = "0123456789ABCDEF";
-  var color = "#";
-  for (var i = 0; i < 6; i++) {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
@@ -134,7 +133,5 @@ const randomColor = getRandomColor();
 
 const body = document.querySelector("body");
 body.style.background = randomColor;
-
-// toggleTempButton.style.background = randomColor;
 
 getUserInfo();

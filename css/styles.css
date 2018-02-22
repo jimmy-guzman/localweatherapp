@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
 html,
 body,
 .container {
@@ -11,34 +11,8 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-#location {
-  font-size: 60px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-.symbol {
-  font-size: 100px;
-}
-
-#temp {
-  text-align: center;
-  display: inline-block;
-  font-size: 100px;
-  /* width: 100px; */
-  /* margin-right: 5px; */
-}
-
-#conditions {
-  font-size: 60px;
-}
-
-.conditions {
-  padding-top: 40px;
-}
-
 .info-box {
-  color: #324D5C;
+  color: #324d5c;
   background: #efefef;
   margin-left: auto;
   margin-right: auto;
@@ -49,32 +23,53 @@ body {
   position: relative;
 }
 
+#location {
+  font-size: 60px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#temp {
+  text-align: center;
+  display: inline-block;
+  font-size: 100px;
+}
+
+.symbol {
+  font-size: 100px;
+}
+
+#conditions {
+  font-size: 60px;
+}
+
 /*---------------Button----------------*/
 .button {
   position: absolute;
   font-family: "Open Sans", sans-serif;
   border: none;
-  color: #324D5C;
+  color: #324d5c;
   font-size: 18px;
   font-weight: 700;
   cursor: pointer;
   outline: none;
-  border-radius: .3em;
+  border-radius: 0.3em;
   top: 5px;
   right: 5px;
   background: transparent;
 }
 
 .button:hover {
-  transform: scale(.9);
+  transform: scale(0.9);
 }
 
 .button:focus {
   outline: none;
 }
 
+/*---------------Media Queries----------------*/
 @media (min-width: 576px) {
   .info-box {
-    border-radius: .3em;
+    border-radius: 0.3em;
   }
 }
